@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: choyda <chyoda@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: tgwin <tgwin@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 19:21:10 by choyda            #+#    #+#             */
-/*   Updated: 2022/05/04 14:08:41 by choyda           ###   ########.fr       */
+/*   Created: 2022/06/03 13:24:24 by tgwin             #+#    #+#             */
+/*   Updated: 2022/06/03 13:24:24 by tgwin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	*philo(void *argv)
 
 	philo = argv;
 	if (philo->n % 2 == 0)
-		usleep(/*philo->info->time_to_eat **/ 1000);
+		usleep(1000);
 	while (!philo->info->finish)
 	{
 		pickup_fork(philo);

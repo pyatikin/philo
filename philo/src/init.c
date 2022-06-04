@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: choyda <chyoda@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: tgwin <tgwin@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 19:20:39 by choyda            #+#    #+#             */
-/*   Updated: 2022/05/03 19:43:12 by choyda           ###   ########.fr       */
+/*   Created: 2022/06/03 13:23:57 by tgwin             #+#    #+#             */
+/*   Updated: 2022/06/03 13:23:57 by tgwin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	check_info(t_info *info, int argc)
 {
 	if (argc == 6 && info->num_of_must_eat <= 0)
 		return (ft_puterror("ERROR: wrong num of must eat\n"));
-	if (info->num_of_philo < 0)
+	if (info->num_of_philo < 1)
 		return (ft_puterror("ERROR: wrong num of philo\n"));
 	if (info->time_to_die < 0)
 		return (ft_puterror("ERROR: wrong time to die\n"));
