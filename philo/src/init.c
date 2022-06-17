@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgwin <tgwin@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 13:23:57 by tgwin             #+#    #+#             */
-/*   Updated: 2022/06/03 13:23:57 by tgwin            ###   ########.fr       */
+/*   Created: 2022/06/14 17:47:05 by tgwin             #+#    #+#             */
+/*   Updated: 2022/06/14 17:47:05 by tgwin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ static int	check_info(t_info *info, int argc)
 {
 	if (argc == 6 && info->num_of_must_eat <= 0)
 		return (ft_puterror("ERROR: wrong num of must eat\n"));
-	if (info->num_of_philo < 1)
+	if (info->num_of_philo <= 0)
 		return (ft_puterror("ERROR: wrong num of philo\n"));
-	if (info->time_to_die < 0)
+	if (info->time_to_die <= 0)
 		return (ft_puterror("ERROR: wrong time to die\n"));
-	if (info->time_to_eat < 0)
+	if (info->time_to_eat <= 0)
 		return (ft_puterror("ERROR: wrong time to eat\n"));
-	if (info->time_to_sleep < 0)
+	if (info->time_to_sleep <= 0)
 		return (ft_puterror("ERROR: wrong time to sleep\n"));
 	return (FT_SUCCESS);
 }

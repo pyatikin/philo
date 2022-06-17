@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgwin <tgwin@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 13:24:36 by tgwin             #+#    #+#             */
-/*   Updated: 2022/06/03 13:24:36 by tgwin            ###   ########.fr       */
+/*   Created: 2022/06/14 17:47:32 by tgwin             #+#    #+#             */
+/*   Updated: 2022/06/14 17:47:32 by tgwin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,10 @@ int	ft_atoi(const char *nptr)
 	result = 0;
 	flag = 1;
 	if (*nptr == '-')
+	{
 		flag *= -1;
+		nptr++;
+	}
 	while ('0' <= *nptr && *nptr <= '9')
 	{
 		result *= 10;

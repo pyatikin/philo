@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tgwin <tgwin@student.21-school.ru>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/03 13:24:43 by tgwin             #+#    #+#              #
-#    Updated: 2022/06/03 13:24:43 by tgwin            ###   ########.fr        #
+#    Created: 2022/06/14 17:47:38 by tgwin             #+#    #+#              #
+#    Updated: 2022/06/14 17:47:38 by tgwin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 
-CC = gcc
+CC = clang
 CFLAGS = -Wall -Wextra -Werror
 CLIBFLAGS = -lncurses -lpthread -pthread
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgwin <tgwin@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 13:24:03 by tgwin             #+#    #+#             */
-/*   Updated: 2022/06/03 13:24:03 by tgwin            ###   ########.fr       */
+/*   Created: 2022/06/14 17:47:12 by tgwin             #+#    #+#             */
+/*   Updated: 2022/06/14 17:47:12 by tgwin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static int	one_philo(char **argv)
 {
+	if (argv[1][0] == '-')
+		return (ft_puterror("ERROR: wrong num of philo\n"));
 	if (ft_atoi(argv[1]) == 1)
 	{
 		printf("0 1 has taken a fork\n");
@@ -39,6 +41,7 @@ static void	join_and_free_philos(t_info *info)
 	while (i < info->num_of_philo)
 		pthread_mutex_destroy(&info->forks[i++]);
 	free(info->forks);
+	pthread_mutex_destroy(&info->finish_mutex);
 }
 
 static void	create_philos(t_info *info)
@@ -68,11 +71,14 @@ int	main(int argc, char *argv[])
 {
 	t_info	info;
 
+	if (argc != 5 && argc != 6)
+		return (ft_puterror("ERROR: wrong argc\n"));
+	if (argv[1][0] == '-' || argv[2][0] == '-' || argv[3][0] == '-'
+		|| argv[4][0] == '-' || (argc == 6 && argv[5][0] == '-'))
+		return (ft_puterror("ERROR: wrong args\n"));
 	if (one_philo(argv))
 		return (0);
 	memset(&info, 0, sizeof(info));
-	if (argc != 5 && argc != 6)
-		return (ft_puterror("ERROR: wrong argc\n"));
 	if (init(&info, argc, argv))
 		return (1);
 	create_philos(&info);
